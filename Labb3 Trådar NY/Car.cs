@@ -8,56 +8,32 @@ namespace Labb3_Trådar_NY
     public class Car
     {
         public string CarName { get; set; }
-        public decimal Speed = 27.78m;
-        public decimal RacingDistance = 1000;
+        public decimal Speed = 27.78m; //Meter per secound 
+        public decimal RacingDistance = 500;// Distance in meters
         public decimal Distance = 0;
         public bool Finished = false;
 
 
 
-        public void StartRaceToyota()
+        public void StartRace()
         {
-            CarName = "Toyota";
-
+            Started(CarName);
             int a = 0;
             for (Distance = 0; Distance <= RacingDistance; Distance = Distance + Speed)
             {
-
-                Thread.Sleep(1000);
-                a = a + 1;
-                if (a == 30)
-                {
-                    Problems(CarName);
-                    a = 0;
-                }
-
-
                 
-            }
-            Finished = true;
-            Finsish(CarName, Finished);
-        }
-
-        public void StartRaceVolvo()
-        {
-            CarName = "Volvo";
-            
-            int a = 0;
-            for (Distance = 0; Distance <= RacingDistance; Distance = Distance + Speed)
-            {
-
                 Thread.Sleep(1000);
                 a = a + 1;
-                if (a == 30)
+                if (a == 3)
                 {
                     Problems(CarName);
                     a = 0;
                 }
             }
             Finished = true;
-            Finsish(CarName, Finished);
-
         }
+
+
         public void OutOfGas(string Car)
         {
             Console.WriteLine(Car + " behöver tanka, står stilla i 30 skeunder");
@@ -86,7 +62,6 @@ namespace Labb3_Trådar_NY
         public void Problems(string Carname)
         {
             int Test = new Random().Next(1, 51);
-            //Console.WriteLine(Test);
 
             if (Test <= 1)
             {
@@ -114,22 +89,6 @@ namespace Labb3_Trådar_NY
             Console.WriteLine("{0} Har startat", CarName);
         }
 
-        public void Finsish(string car, bool Finished)
-        {
-            if (Finished)
-            {
-                Console.WriteLine("{0} Bilen är i mål!", car);
-            }
-            
-            
-            
-
-            
-
-
-
-
-        }
     }
 
 }
