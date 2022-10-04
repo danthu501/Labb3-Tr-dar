@@ -61,21 +61,21 @@ namespace Labb3_Trådar_NY
 
         public void Problems(string Carname)
         {
-            int Test = new Random().Next(1, 51);
+            int RandomProblemNumber = new Random().Next(1, 51);
 
-            if (Test <= 1)
+            if (RandomProblemNumber <= 1)
             {
                 OutOfGas(Carname);
             }
-            if (Test >= 49)
+            if (RandomProblemNumber >= 49)
             {
                 FlatTire(Carname);
             }
-            if (Test >= 2 && Test < 5)
+            if (RandomProblemNumber >= 2 && Test < 5)
             {
                 BirdOnWindShield(Carname);
             }
-            if (Test >= 10 && Test < 20)
+            if (RandomProblemNumber >= 10 && Test < 20)
             {
                 EngineFaliure(Carname);
             }
